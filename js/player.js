@@ -37,9 +37,7 @@ document.getElementById('calculate').addEventListener('click', function () {
 
 
 document.getElementById('calculate-total').addEventListener('click', function () {
-    const PlayerExpensesElement = document.getElementById('player-expenses');
-    const newPlayerExpensesString = PlayerExpensesElement.innerText;
-    const newPlayerExpenses = parseFloat(newPlayerExpensesString);
+    const newPlayerExpenses = getValueOfElementById('player-expenses');
 
     const newmManagerExpenses = getValueOfFieldById('manager-field');
     const newCoachExpenses = getValueOfFieldById('coach-field');
