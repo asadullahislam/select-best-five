@@ -17,24 +17,28 @@ for (const button of buttons) {
     })
 }
 
-
 document.getElementById('calculate').addEventListener('click', function () {
     const playerList = document.getElementById('player-list');
     const playerNumber = playerList.getElementsByTagName('li').length;
-
     const perPlayerExpense = getValueOfFieldById('player-field');
-
-    const newPlayerExpenses = playerNumber * perPlayerExpense;
-
-    setValueInElementById('player-expense', newPlayerExpenses);
+    if (isNaN(perPlayerExpense) || perPlayerExpense === 0) {
+        alert('Please Enter Valid Per Player Ammount');
+    }
+    else {
+        const newPlayerExpenses = playerNumber * perPlayerExpense;
+        setValueInElementById('player-expenses', newPlayerExpenses);
+    }
 })
 
 document.getElementById('calculate-total').addEventListener('click', function () {
     const newPlayerExpenses = getValueOfElementById('player-expenses');
     const newmManagerExpenses = getValueOfFieldById('manager-field');
     const newCoachExpenses = getValueOfFieldById('coach-field');
-
-    const calculateTotal = newPlayerExpenses + newmManagerExpenses + newCoachExpenses;
-
-    setValueInElementById('total', calculateTotal);
+    if (isNaN(newmManagerExpenses) || isNaN(newCoachExpenses)) {
+        alert('Please Enter Valid Ammount');
+    }
+    else {
+        const calculateTotal = newPlayerExpenses + newmManagerExpenses + newCoachExpenses;
+        setValueInElementById('total', calculateTotal);
+    }
 })
