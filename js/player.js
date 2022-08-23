@@ -26,9 +26,7 @@ document.getElementById('calculate').addEventListener('click', function () {
     const playerList = document.getElementById('player-list');
     const playerNumber = playerList.getElementsByTagName('li').length;
 
-    const playerField = document.getElementById('player-field');
-    const perPlayerExpenseString = playerField.value;
-    const perPlayerExpense = parseFloat(perPlayerExpenseString);
+    const perPlayerExpense = getValueOfFieldById('player-field');
 
     const newPlayerExpenses = playerNumber * perPlayerExpense;
 
@@ -43,17 +41,8 @@ document.getElementById('calculate-total').addEventListener('click', function ()
     const newPlayerExpensesString = PlayerExpensesElement.innerText;
     const newPlayerExpenses = parseFloat(newPlayerExpensesString);
 
-
-    const managerField = document.getElementById('manager-field');
-    const newmManagerExpensesString = managerField.value;
-    const newmManagerExpenses = parseFloat(newmManagerExpensesString);
-
-
-
-    const coachField = document.getElementById('coach-field');
-    const newCoachExpensesString = coachField.value;
-    const newCoachExpenses = parseFloat(newCoachExpensesString);
-
+    const newmManagerExpenses = getValueOfFieldById('manager-field');
+    const newCoachExpenses = getValueOfFieldById('coach-field');
 
     const calculateTotal = newPlayerExpenses + newmManagerExpenses + newCoachExpenses;
 
