@@ -18,10 +18,6 @@ for (const button of buttons) {
 }
 
 
-
-
-
-
 document.getElementById('calculate').addEventListener('click', function () {
     const playerList = document.getElementById('player-list');
     const playerNumber = playerList.getElementsByTagName('li').length;
@@ -30,20 +26,15 @@ document.getElementById('calculate').addEventListener('click', function () {
 
     const newPlayerExpenses = playerNumber * perPlayerExpense;
 
-
-    const PlayerExpensesElement = document.getElementById('player-expenses');
-    PlayerExpensesElement.innerText = newPlayerExpenses;
+    setValueInElementById('player-expense', newPlayerExpenses);
 })
-
 
 document.getElementById('calculate-total').addEventListener('click', function () {
     const newPlayerExpenses = getValueOfElementById('player-expenses');
-
     const newmManagerExpenses = getValueOfFieldById('manager-field');
     const newCoachExpenses = getValueOfFieldById('coach-field');
 
     const calculateTotal = newPlayerExpenses + newmManagerExpenses + newCoachExpenses;
 
-    const totalExpensesElement = document.getElementById('total');
-    totalExpensesElement.innerText = calculateTotal;
+    setValueInElementById('total', calculateTotal);
 })

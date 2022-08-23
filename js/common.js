@@ -7,3 +7,7 @@ function getValueOfElementById(elementId) {
     const elementValue = parseFloat(document.getElementById(elementId).innerText);
     return elementValue;
 }
+function setValueInElementById(elementId, value) {
+    const element = document.getElementById(elementId);
+    element.innerText = value;
+}
